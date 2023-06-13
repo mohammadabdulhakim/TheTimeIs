@@ -5,7 +5,7 @@
 ## How I Used Github API to Generate a Dynamic Name Updating Every Minute!
 
 
-## 1- Getting the current time in GMT
+### 1- Getting the current time in GMT
 
 ```js
 const currentDate = new Date().toUTCString();
@@ -23,7 +23,7 @@ const hoursAndMinutes = currentDate.slice(currentDate.indexOf(":")-2,22);
 
 ---
 
-## 2- Generating the new name
+### 2- Generating the new name
 
 so, the whole new name will be 
 
@@ -50,7 +50,7 @@ console.log(generateNewName()) // logs "The time is 08:00 GMT"
 
 ---
 
-## 3- Getting the github token
+### 3- Getting the github token
 you will need your github token to use it when update your account.
 
 you can find the steps get your token in [github docs](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
@@ -63,13 +63,13 @@ you can find the steps get your token in [github docs](https://docs.github.com/e
 
 --- 
 
-## 4- installing packages
+### 4- installing packages
 `npm i dotenv`
 `npm i cross-fetch`
 
 ---
 
-## 5- update account name with github api
+### 5- update account name with github api
 
 ```js
 
@@ -98,7 +98,7 @@ setInterval(() => {
 
 ```
 
-## 6- run the code
+### 6- run the code
 write `node {filename}.js` in the terminal.
 e.g. `node index.js`
 

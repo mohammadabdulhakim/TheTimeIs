@@ -8,7 +8,7 @@ const token = process.env.GITHUB_TOKEN
 //*========> [ GENERATE THE NEW NAME ] <============= 
 const generateNewName = () => {
   const currentDate = new Date().toUTCString();
-  const hoursAndMinutes = currentDate.slice(currentDate.indexOf(":") - 2, 22);
+  const hoursAndMinutes = currentDate.slice(currentDate.indexOf(":") - 2, 25);
 
   const newname = `The time is ${hoursAndMinutes} GMT`;
   return newname;
@@ -28,7 +28,12 @@ const updateAccount = async() =>{
         Authorization: `Bearer ${token}`,
       },
     })
-    console.log(res.status)
+
+    const message = res.status === 200?
+     "Successfully changed"
+     :
+     `Error: ${res.statusText}`
+    console.log(message)
 }
 //!=====================================
 
@@ -36,5 +41,5 @@ const updateAccount = async() =>{
 //*========> [ EVERY MINUTE ] <============= 
 setInterval(() => {
     updateAccount()
-}, 60000)
+}, 1000)
 // !================
